@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulletin Board - Water Sustainability</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.sidebar {
+    background-color: #004c8c;
+    color: #fff;
+    padding: 20px;
+    height: 100vh;
+    animation: slideIn 1s ease-out;
+}
+
+.sidebar .logo {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.sidebar h2 {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.social-icons img {
+    width: 30px;
+    margin: 10px 5px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.cta-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.main-content {
+    padding: 20px;
+    background-color: #e5e5e5;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.navbar-nav .nav-link {
+    color: #000;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.contact-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.bulletin-section {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+}
+
+.bulletin-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: slideIn 2s ease-out;
+}
+
+.bulletin-form {
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.bulletin-form .form-group {
+    margin-bottom: 20px;
+}
+
+.bulletin-form .form-control {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+.bulletin-form .btn {
+    background-color: #28a745;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.posts {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.post {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.post h3 {
+    font-size: 24px;
+}
+
+.post p {
+    font-size: 16px;
+}
+
+.post img,
+.post video {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.post video {
+    display: block;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <h1 class="logo">AQUA</h1>
+                <p>Water Sustainability</p>
+                <h2>FOLLOW US</h2>
+                <p>Join us in our mission to promote water sustainability and make a difference.</p>
+                <div class="social-icons">
+                    <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                    <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                </div>
+                <button class="cta-button">Join Our Mission</button>
+            </div>
+            <div class="col-md-9 main-content">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="join.html">Join Our Mission</a></li>
+                        <li class="nav-item"><a class="nav-link" href="bulletin.html">Bulletin Board</a></li>
+                    </ul>
+                    <button class="contact-button">Contact Us</button>
+                </nav>
+                <div class="bulletin-section">
+                    <h1 class="animated-text">BULLETIN BOARD</h1>
+                    <form id="bulletinForm" class="bulletin-form">
+                        <div class="form-group">
+                            <label for="postType">Post Type</label>
+                            <select class="form-control" id="postType">
+                                <option value="text">Text</option>
+                                <option value="photo">Photo</option>
+                                <option value="video">Video</option>
+                                <option value="gif">GIF</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="postContent">Content</label>
+                            <input type="text" class="form-control" id="postContent" placeholder="Enter your content">
+                        </div>
+                        <div class="form-group">
+                            <label for="postFile">Upload File</label>
+                            <input type="file" class="form-control-file" id="postFile">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Post</button>
+                    </form>
+                    <div id="posts" class="posts">
+                        <!-- Posts will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('bulletinForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const postType = document.getElementById('postType').value;
+    const postContent = document.getElementById('postContent').value;
+    let fileContent = '';
+
+    const fileInput = document.getElementById('postFile');
+    if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+        
+        reader.onload = function(event) {
+            fileContent = event.target.result;
+            addPost(postType, postContent, fileContent);
+        };
+        
+        reader.readAsDataURL(file); 
+    } else {
+        addPost(postType, postContent, '');
+    }
+});
+
+function addPost(type, content, fileContent) {
+    const postContainer = document.getElementById('posts');
+    const postElement = document.createElement('div');
+    postElement.className = 'post';
+
+    switch(type) {
+        case 'text':
+            postElement.innerHTML = `<h3>Text Post</h3><p>${content}</p>`;
+            break;
+        case 'photo':
+            postElement.innerHTML = `<h3>Photo Post</h3><img src="${fileContent}" alt="Photo">`;
+            break;
+        case 'video':
+            postElement.innerHTML = `<h3>Video Post</h3><video controls><source src="${fileContent}" type="video/mp4"></video>`;
+            break;
+        case 'gif':
+            postElement.innerHTML = `<h3>GIF Post</h3><img src="${fileContent}" alt="GIF">`;
+            break;
+        default:
+            postElement.innerHTML = `<h3>Unknown Post</h3><p>${content}</p>`;
+    }
+
+    postContainer.appendChild(postElement);
+    document.getElementById('bulletinForm').reset();
+    alert('Your post has been successfully added.');
+}
+
+    </script>
+</body>
+</html>
