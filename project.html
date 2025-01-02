@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Water Sustainability</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.sidebar {
+    background-color: #004c8c;
+    color: #fff;
+    padding: 20px;
+    height: 100vh;
+    animation: slideIn 1s ease-out;
+}
+
+.sidebar .logo {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.sidebar h2 {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.social-icons img {
+    width: 30px;
+    margin: 10px 5px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.cta-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.main-content {
+    padding: 20px;
+    background-color: #e5e5e5;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.navbar-nav .nav-link {
+    color: #000;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.contact-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.projects-section {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+}
+
+.projects-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: slideIn 2s ease-out;
+}
+
+.project-list {
+    text-align: left;
+}
+
+.project-item {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.project-item:hover {
+    background-color: #e2e6ea;
+}
+
+.project-details {
+    display: none;
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.project-details h3 {
+    font-size: 24px;
+}
+
+.project-details p {
+    font-size: 16px;
+}
+
+.project-details .btn {
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <h1 class="logo">AQUA</h1>
+                <p>Water Sustainability</p>
+                <h2>FOLLOW US</h2>
+                <p>Join us in our mission to promote water sustainability and make a difference.</p>
+                <div class="social-icons">
+                    <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                    <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                </div>
+                <button class="cta-button">Join Our Mission</button>
+            </div>
+            <div class="col-md-9 main-content">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="water.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <button class="contact-button">Contact Us</button>
+                </nav>
+                <div class="projects-section">
+                    <h1 class="animated-text">OUR PROJECTS</h1>
+                    <div class="project-list">
+                        <!-- Project 1 -->
+                        <div class="project-item" onclick="showDetails(1)">
+                            <h2>Project 1: Clean Water Initiative</h2>
+                            <p>This project focuses on providing clean water to rural areas.</p>
+                        </div>
+                        <div class="project-details" id="details-1">
+                            <h3>Project 1 Details</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue.</p>
+                            <button class="btn btn-secondary" onclick="hideDetails(1)">Close</button>
+                        </div>
+                        <!-- Project 2 -->
+                        <div class="project-item" onclick="showDetails(2)">
+                            <h2>Project 2: Water Conservation Campaign</h2>
+                            <p>This campaign aims to educate the public on water conservation techniques.</p>
+                        </div>
+                        <div class="project-details" id="details-2">
+                            <h3>Project 2 Details</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue.</p>
+                            <button class="btn btn-secondary" onclick="hideDetails(2)">Close</button>
+                        </div>
+                        <!-- Project 3 -->
+                        <div class="project-item" onclick="showDetails(3)">
+                            <h2>Project 3: Sustainable Irrigation</h2>
+                            <p>This project develops sustainable irrigation systems for agriculture.</p>
+                        </div>
+                        <div class="project-details" id="details-3">
+                            <h3>Project 3 Details</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue.</p>
+                            <button class="btn btn-secondary" onclick="hideDetails(3)">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showDetails(id) {
+        document.getElementById('details-' + id).style.display = 'block';
+    }
+
+    function hideDetails(id) {
+        document.getElementById('details-' + id).style.display = 'none';
+    }
+    </script>
+</body>
+</html>
